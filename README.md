@@ -26,6 +26,7 @@ mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'pas
 
 my_converter = Converter(uri, **mysql_bilgilerim)
 my_converter.mysql_to_mongodb('your_table_name')
+my_converter.mongodb_to_mysql('your_table_name')
 ```
 ## Sınıflar ve Metodlar
 `Converter`
