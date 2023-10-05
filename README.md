@@ -22,7 +22,7 @@ DATAWAREHOUSE_PASSWORD = "password"
 port_number = 6600
 
 uri = "mongodb+srv://admin:Adminpass@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
-mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD, 'port': port_number, 'database': 'weg_hotel'}
+mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD, 'port': port_number, 'database': 'your_db'}
 
 my_converter = Converter(uri, **mysql_bilgilerim)
 my_converter.mysql_to_mongodb('your_table_name')
