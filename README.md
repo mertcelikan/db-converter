@@ -25,7 +25,7 @@ uri = "mongodb+srv://admin:Adminpass@cluster0.smovknl.mongodb.net/?retryWrites=t
 mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD, 'port': port_number, 'database': 'weg_hotel'}
 
 my_converter = Converter(uri, **mysql_bilgilerim)
-my_converter.mysql_to_mongodb('hotels_pro_b2b')
+my_converter.mysql_to_mongodb('your_table_name')
 ```
 ## Sınıflar ve Metodlar
 `Converter`
