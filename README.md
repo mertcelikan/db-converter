@@ -16,12 +16,12 @@ Bu projeyi kullanarak, MySQL veritabanındaki belirli bir tabloyu MongoDB koleks
 from converter import Converter
 
 # DW bilgileri
-DATAWAREHOUSE_HOST = "172.16.5.16"
-DATAWAREHOUSE_USER = "bi-admin"
-DATAWAREHOUSE_PASSWORD = "Dk5Bnqgj3gEsRz2p"
-port_number = 3308
+DATAWAREHOUSE_HOST = "000.00.0.00"
+DATAWAREHOUSE_USER = "admin"
+DATAWAREHOUSE_PASSWORD = "password"
+port_number = 6600
 
-uri = "mongodb+srv://mert:Mert123456!@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://admin:Adminpass@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
 mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD, 'port': port_number, 'database': 'weg_hotel'}
 
 my_converter = Converter(uri, **mysql_bilgilerim)
