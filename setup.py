@@ -13,13 +13,13 @@ DESCRIPTION = 'Data migration. MongoDB to MySQL - MySQL to MongoDB'
 
 # Setting up
 setup(
-    name="dbconverter",
+    name="db-converter",
     version=VERSION,
     author="dilsizyazilimci (Mert Celikan)",
     author_email="celikanmert@gmail.com",
     description=DESCRIPTION,
-    #long_description_content_type="text/markdown",
-    #long_description=long_description,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[  # Gerekli bağımlılıklar
         'numpy',
