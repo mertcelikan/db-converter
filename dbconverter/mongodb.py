@@ -14,7 +14,6 @@ class MongoDb:
 
     def connect(self):
         # MongoDB'ye bağlanma
-        #uri = "mongodb+srv://mert:Mert123456!@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
         self.client = MongoClient(self.uri, server_api=ServerApi('1'))
         self.db = self.client['crypto']
 

@@ -13,20 +13,20 @@ Bu proje, MongoDB ve MySQL veritabanları arasında veri dönüşümü sağlayan
 Bu projeyi kullanarak, MySQL veritabanındaki belirli bir tabloyu MongoDB koleksiyonuna dönüştürebilirsiniz.
 
 ```python
-from converter import Converter
+from dbconverter.converter import Converter
 
 # DW bilgileri
-DATAWAREHOUSE_HOST = "000.00.0.00"
-DATAWAREHOUSE_USER = "admin"
-DATAWAREHOUSE_PASSWORD = "password"
-port_number = 6600
+DATAWAREHOUSE_HOST = "172.16.5.16"
+DATAWAREHOUSE_USER = "bi-admin"
+DATAWAREHOUSE_PASSWORD = "Dk5Bnqgj3gEsRz2p"
+port_number = 3308
 
-uri = "mongodb+srv://admin:Adminpass@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
-mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD, 'port': port_number, 'database': 'your_db'}
+uri = "mongodb+srv://mert:Mert123456!@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
+mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD,
+                    'port': port_number, 'database': 'weg_hotel'}
 
 my_converter = Converter(uri, **mysql_bilgilerim)
-my_converter.mysql_to_mongodb('your_table_name')
-my_converter.mongodb_to_mysql('your_table_name')
+my_converter.mysql_to_mongodb('hotels_pro_b2b')
 ```
 ## Sınıflar ve Metodlar
 `Converter`
