@@ -1,16 +1,21 @@
-# DB Converter - MySQL to MongoDB
+# DB Converter - MySQL to MongoDB | MongoDB to MySQL
+![db-converter-mysql-to-mongodb-mongodb-to-mysql](dbconverter_main_img.png)
 
-Bu proje, MongoDB ve MySQL veritabanları arasında veri dönüşümü sağlayan bir araçtır.
+This project is a python library that facilitates data conversion between MongoDB and MySQL databases.
 
-## Kullanılan Kütüphaneler
+## Installation
 
-- `pandas`: Veri çerçeveleri ile çalışmak için kullanılır.
-- `pymongo`: MongoDB ile iletişim kurmak için kullanılır.
-- `pymysql`: MySQL veritabanına bağlanmak için kullanılır.
+You can use the following command to install the project:
 
-## Kullanım
+```bash
+pip install db-converter
+```
 
-Bu projeyi kullanarak, MySQL veritabanındaki belirli bir tabloyu MongoDB koleksiyonuna dönüştürebilirsiniz.
+## Usage
+
+By using this project, you can convert a specific table from a MySQL database to a MongoDB collection. 
+
+You can also convert a specific collection from a MongoDB database to a MySQL table.
 
 ```python
 from dbconverter.converter import Converter
@@ -28,33 +33,31 @@ mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'pas
 my_converter = Converter(uri, **mysql_bilgilerim)
 my_converter.mysql_to_mongodb('test_table')
 ```
-## Sınıflar ve Metodlar
+
+## Used Libraries
+- `pandas`: Used for working with data frames.
+- `pymongo`: Used for communicating with MongoDB.
+- `pymysql`: Used for connecting to the MySQL database.
+
+
+## Classes and Methods
 `Converter`
-- `__init__(self, mongo_uri, **kwargs)`: MongoDB ve MySQL bağlantı bilgilerini alarak bir Converter örneği oluşturur.
-- `df_to_json(df) -> list` : Bir DataFrame'i JSON nesnelerine dönüştürür. 
-- `mysql_to_mongodb(self, table_name=None)` : Belirli bir MySQL tablosundaki verileri MongoDB koleksiyonuna dönüştürür.
+- `__init__(self, mongo_uri, **kwargs)`: Creates an instance of Converter by taking MongoDB and MySQL connection information.
+- `df_to_json(df) -> list` : Converts a DataFrame into JSON objects. 
+- `mysql_to_mongodb(self, table_name=None)` : Converts data from a specific MySQL table to a MongoDB collection.
 
 `MongoDb`
-- `__init__(self, uri)`: MongoDB bağlantısı oluşturur.
-- `connect(self)` : MongoDB sunucusuna bağlanır.
-- `insert_data(self, json_data, collection)` : JSON veriyi belirtilen koleksiyona ekler.
-- `get_data(self, collection, query=None)` : Belirtilen koleksiyondaki verileri alır.
+- `__init__(self, uri)`: Establishes a connection to MongoDB.
+- `connect(self)` : Connects to the MongoDB server.
+- `insert_data(self, json_data, collection)` : Inserts JSON data into the specified collection.
+- `get_data(self, collection, query=None)` : Retrieves data from the specified collection.
 
 `MySQLConnector`
-- `__init__(self, host, user, password, port_number, database)` : MySQL bağlantısı oluşturur.
-- `connect(self)` : MySQL veritabanına bağlanır.
-`disconnect(self)` : Bağlantıyı kapatır.
-`fetch_data(self, table) -> pd.DataFrame` : Belirtilen tablodan veri çeker ve bir DataFrame'e dönüştürür.
+- `__init__(self, host, user, password, port_number, database)` : Establishes a connection to MySQL.
+- `connect(self)` : Connects to the MySQL database.
+`disconnect(self)` : Closes the connection.
+`fetch_data(self, table) -> pd.DataFrame` : Fetches data from the specified table and converts it into a DataFrame.
 
+## Licence
 
-## Kurulum
-
-Proje kütüphanelerini yüklemek için aşağıdaki komutu kullanabilirsiniz:
-
-```bash
-pip install pandas pymongo pymysql
-```
-
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına göz atın.
+This project is licensed under the MIT License. See the LICENSE file for more information.
