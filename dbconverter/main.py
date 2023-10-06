@@ -1,10 +1,10 @@
 from converter import Converter
 
 # DW bilgieri
-DATAWAREHOUSE_HOST = ""
-DATAWAREHOUSE_USER = "bi-admin"
-DATAWAREHOUSE_PASSWORD = ""
-port_number = 3308
+DATAWAREHOUSE_HOST = "host_name"
+DATAWAREHOUSE_USER = "admin"
+DATAWAREHOUSE_PASSWORD = "12345"
+port_number = 8080
 
 
 uri = "mongodb+srv://admin:admin@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
