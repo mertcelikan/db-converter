@@ -2,7 +2,7 @@ from mongodb import MongoDb
 from MySQLConnector import MySQLConnector
 
 
-class Converter:
+class converter:
     def __init__(self, mongo_uri, **kwargs):
         self.mongo_uri = mongo_uri
 

@@ -1,16 +1,17 @@
-from converter import Converter
+from converter import converter
 
 # DW bilgieri
-DATAWAREHOUSE_HOST = "host_name"
+DATAWAREHOUSE_HOST = "000.00.0.00"
 DATAWAREHOUSE_USER = "admin"
-DATAWAREHOUSE_PASSWORD = "12345"
+DATAWAREHOUSE_PASSWORD = "password"
 port_number = 8080
 
 
-uri = "mongodb+srv://admin:admin@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://admin:password!@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
 mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD, 'port': port_number, 'database': 'your_db_name'}
 
-my_converter = Converter(uri, **mysql_bilgilerim)
+my_converter = converter(uri, **mysql_bilgilerim)
 my_converter.mysql_to_mongodb('test_table')
+my_converter.mongodb_to_mysql('test_collection')
 
 
