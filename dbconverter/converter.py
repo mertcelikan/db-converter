@@ -4,6 +4,14 @@ from MySQLConnector import MySQLConnector
 
 class converter:
     def __init__(self, mongo_uri, **kwargs):
+        """
+        Initializes the Converter class.
+
+        Args:
+            mongo_uri (str): The URI for connecting to MongoDB.
+            **kwargs: Keyword arguments containing MySQL connection details.
+                      Expected keys: 'host', 'user', 'password', 'port', 'database'.
+        """
         self.mongo_uri = mongo_uri
 
         self.host = kwargs['host']
@@ -17,10 +25,14 @@ class converter:
 
     def mysql_to_mongodb(self, table_name=None):
         """
-        :param mysql_bilgilerim:
-        :param mongodb_bilgilerim:
-        :param table_name:
-        :return:
+        Migrates data from MySQL to MongoDB.
+
+        Args:
+            table_name (str, optional): The name of the table to migrate (default is None).
+                                        If None, all tables will be migrated.
+
+        Returns:
+            None
         """
 
         if table_name is None:
@@ -35,12 +47,15 @@ class converter:
 
     def mongodb_to_mysql(self, collection_name=None):
         """
-        :param mysql_bilgilerim:
-        :param mongodb_bilgilerim:
-        :param collection_name:
-        :return:
-        """
+        Migrates data from MongoDB to MySQL.
 
+        Args:
+            collection_name (str, optional): The name of the collection to migrate (default is None).
+                                             If None, all collections will be migrated.
+
+        Returns:
+            None
+        """
         if collection_name is None:
             print("bütün db geçirelecek")
         else:
