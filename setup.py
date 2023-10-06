@@ -33,7 +33,7 @@ setup(
     ],
     keywords=['python', 'mongodb', 'mysql', 'database', 'MySQL to MongoDB', 'MongoDB to MySQL', 'data migration'],
     classifiers=[
-        "Development Status :: 1 - tESTİNG",
+        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
         "Operating System :: Unix",
