@@ -1,6 +1,7 @@
-from mongodb import MongoDb
-from MySQLConnector import MySQLConnector
-
+#from mongodb import MongoDb
+#from MySQLConnector import MySQLConnector
+from dbconverter.mongodb import MongoDb
+from dbconverter.mysqlconnector import MySQLConnector
 
 class converter:
     def __init__(self, mongo_uri, **kwargs):
