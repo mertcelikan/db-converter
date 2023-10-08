@@ -18,19 +18,16 @@ By using this project, you can convert a specific table from a MySQL database to
 You can also convert a specific collection from a MongoDB database to a MySQL table.
 
 ```python
-from dbconverter.converter import Converter
+from dbconverter import dataconverter
 
-# DW bilgileri
-DATAWAREHOUSE_HOST = "000.00.0.00"
-DATAWAREHOUSE_USER = "admin"
-DATAWAREHOUSE_PASSWORD = "password"
-port_number = 8080
-
-uri = "mongodb+srv://admin:password!@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority"
-mysql_bilgilerim = {'host': DATAWAREHOUSE_HOST, 'user': DATAWAREHOUSE_USER, 'password': DATAWAREHOUSE_PASSWORD,
-                    'port': port_number, 'database': 'your_db_name'}
-
-my_converter = Converter(uri, **mysql_bilgilerim)
+my_converter = dataconverter(
+    mongo_uri="mongodb+srv://admin:password!@cluster0.smovknl.mongodb.net/?retryWrites=true&w=majority",
+    host="000.00.0.00",
+    user="admin",
+    password="password",
+    port=8080,
+    database="your_db_name"
+)
 my_converter.mysql_to_mongodb('test_table')
 ```
 
